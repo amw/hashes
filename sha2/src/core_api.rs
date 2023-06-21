@@ -16,8 +16,10 @@ use digest::{
 /// i.e. 224 and 256 bits respectively.
 #[derive(Clone)]
 pub struct Sha256VarCore {
-    state: consts::State256,
-    block_len: u64,
+    /// Internal hasher state
+    pub state: consts::State256,
+    /// How many blocks were already processed
+    pub block_len: u64,
 }
 
 impl HashMarker for Sha256VarCore {}

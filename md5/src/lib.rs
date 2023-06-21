@@ -55,8 +55,10 @@ use digest::{
 /// Core MD5 hasher state.
 #[derive(Clone)]
 pub struct Md5Core {
-    block_len: u64,
-    state: [u32; 4],
+    /// How many blocks were already processed
+    pub block_len: u64,
+    /// Internal hasher state
+    pub state: [u32; 4],
 }
 
 impl HashMarker for Md5Core {}
